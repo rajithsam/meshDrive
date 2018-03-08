@@ -11,7 +11,8 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function () 
+{
     return view('welcome');
 });
 
@@ -23,3 +24,8 @@ Route::get('oauth/{driver}', 'Auth\SocialAuthController@redirectToProvider')->na
 Route::get('oauth/{driver}/callback', 'Auth\SocialAuthController@handleProviderCallback')->name('social.callback');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/file_upload', function()
+{
+    return view('file_upload.index');
+})->name('file_upload');

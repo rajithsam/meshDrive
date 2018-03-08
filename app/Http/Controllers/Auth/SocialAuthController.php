@@ -15,10 +15,12 @@ class SocialAuthController extends Controller
         $this->middleware('guest');
     }
 
+
     protected $providers = [
-        'github',
+        'google',
         'facebook',
-        'twitter'
+        'twitter',
+        'github'
     ];
 
     public function show()

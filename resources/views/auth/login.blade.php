@@ -74,10 +74,11 @@
 
                         <hr>
                         <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <a href="{{ route('social.oauth', 'github') }}" class="btn btn-github"><i class="fa fa-github"></i> Github</a>
-                                <a href="{{ route('social.oauth', 'twitter') }}" class="btn btn-twitter"><i class="fa fa-twitter"></i> Twitter</a>
+                            <div class="col-md-offset-4 text-center">
+                                <a href="{{ route('social.oauth', 'google') }}" class="btn btn-github"><i class="fa fa-google"></i> Google</a>
                                 <a href="{{ route('social.oauth', 'facebook') }}" class="btn btn-facebook"><i class="fa fa-facebook"></i> Facebook</a>
+                                <a href="{{ route('social.oauth', 'twitter') }}" class="btn btn-twitter"><i class="fa fa-twitter"></i> Twitter</a>
+                                <a href="{{ route('social.oauth', 'github') }}" class="btn btn-github"><i class="fa fa-github"></i> Github</a>
                             </div>
                         </div>
                         
