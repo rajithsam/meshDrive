@@ -17,14 +17,13 @@
                         <div class="form-group row justify-content-center">
 
                             <div class="btn-group">
-
-                                <button type="button" class="btn btn-info"> 
+                                <a class="btn btn-info" href="{{ route('getfolders') }}"> 
                                     <i class="fa fa-google"></i>  Drive
-                                </button>
+                                </a>
 
-                                <button type="button" class="btn btn-info"> 
+                                <a class="btn btn-info" href> 
                                     <i class="fa fa-dropbox"></i> Dropbox
-                                </button>
+                                </a>
                                 
                             </div>
 
@@ -40,3 +39,9 @@
 </div>
 
 @endsection
+
+@push('scripts')
+
+{{ Html::script('mpa/file_manager/controller.js') }}
+
+@endpush

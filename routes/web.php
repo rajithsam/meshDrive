@@ -25,7 +25,12 @@ Route::get('oauth/{driver}/callback', 'Auth\SocialAuthController@handleProviderC
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/getfolders', 'GoogleDriveController@getfolders')->name('getfolders');
+
+Route::get('/listFilesInFolder/{folder_id}', 'GoogleDriveController@listFilesInFolder')->name('listFilesInFolder');
+
 Route::get('/file_upload', function()
 {
+    
     return view('file_upload.index');
 })->name('file_upload');

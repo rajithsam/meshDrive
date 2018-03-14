@@ -35,18 +35,30 @@ class SocialAuthController extends Controller
             return $this->sendFailedResponse("{$driver} is not currently supported");
         }
 
-        try {
-            return Socialite::driver($driver)->redirect();
-        } catch (Exception $e) {
+        $scopes = [
+            'email','profile',
+            'https://www.googleapis.com/auth/plus.me',
+            'https://www.googleapis.com/auth/drive'
+        ];
+
+        try 
+        {
+            return Socialite::driver($driver)->scopes($scopes)->redirect();
+        } 
+        catch (Exception $e) 
+        {
             return $this->sendFailedResponse($e->getMessage());
         }
     }
 
     public function handleProviderCallback( $driver )
     {
-        try {
+        try 
+        {
             $user = Socialite::driver($driver)->user();
-        } catch (Exception $e) {
+        } 
+        catch (Exception $e) 
+        {
             return $this->sendFailedResponse($e->getMessage());
         }
 
@@ -86,10 +98,10 @@ class SocialAuthController extends Controller
                 'password' => ''
             ]);
         }
-
+        
         // login the user
         Auth::login( $user, true );
-
+       
         return $this->sendSuccessResponse();
     }
 

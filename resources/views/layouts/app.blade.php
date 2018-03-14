@@ -17,12 +17,16 @@
 
 <body>
     
-    <div id="app">
+    <div id="app" ng-app="meshdrive">
+
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+
             <div class="container">
+
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -63,17 +67,29 @@
                         @endguest
                     </ul>
                 </div>
+
             </div>
+
         </nav>
 
         <main class="py-4">
+
             @yield('content')
+
         </main>
+
     </div>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-   
+    {{--  <script src="{{ asset('bower_components/jquery/dist/jquery.js') }}"></script>   --}}
+    <script src="{{ asset('bower_components/angular/angular.js') }}"></script> 
+
+    <script src="{{ asset('mpa/app.js') }}"></script>
+    <script src="{{ asset('mpa/service.js') }}"></script>
+    
+    @stack('scripts')
+    
 </body>
 
 </html>
